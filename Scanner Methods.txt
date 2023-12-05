@@ -1,0 +1,6 @@
+nextInt(): Reads integer values.
+nextFloat(): Reads float value.
+nextDouble(): Reads double value.
+nextBoolean(): Reads boolean value.
+nextLine(): Reads string value until newline character ('\n') is encountered.
+next(): Reads string value until space or newline character is encountered.

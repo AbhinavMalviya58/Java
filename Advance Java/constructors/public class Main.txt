@@ -1,0 +1,39 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    Rectangle R1 = new Rectangle();
+	    R1.length = 10;
+	    R1.show();
+	    int P = R1.perimeter();
+	    int A = R1.area();
+	    System.out.println("perimeter = "+P+"\narea is = "+ A);
+	}
+}
+	class Rectangle
+	{
+        int length;
+        int breadth;
+        Rectangle(){
+            this.length = 15;
+            this.breadth = 8;
+        }
+        
+        Rectangle(int length, int breadth){
+            this.length = length;
+            this.breadth = breadth;
+        }
+        // P = 2(L+w)
+        
+        void show(){
+            System.out.println(length+" "+breadth);
+        }
+        int perimeter(){
+            int P = 2*(length+breadth);
+            return P;
+        }
+        int area(){
+            int A = length * breadth;
+            return A;
+        }
+    }
+

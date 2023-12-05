@@ -1,0 +1,14 @@
+public class Box
+{
+private int 1,b,h;
+public Box()
+{
+1-10; b=8; h=4;
+} 
+public Box(int L,int B, int H) 
+{1=L; b=B; h=H;} 
+public static void main(String[] args)
+{
+Box_bl=new BoxOH Box b2=new Box (20,15,5);
+}
+}

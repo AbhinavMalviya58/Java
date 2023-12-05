@@ -1,0 +1,29 @@
+				cuboid
+L 
+B 
+H
+total surface area = 2 (lb + bh + lh)
+volume = L*B*H
+area of 4 wall = 2 H (L + B)
+
+............................................................
+				right angle triangle
+B
+p
+Hipo = ✓a2+b2//   Math.hypot();//Math.sqrt();
+area  = ab/2
+{
+B
+P = a+b+✓a2+b2
+ret = hipo
+
+}
+..................................................................
+
+				cylinder
+radius 
+height
+V = πr2h
+total surface area = 2πr (h + r)
+curved surface area= 2πrh
+

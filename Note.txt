@@ -1,0 +1,35 @@
+#include <stdbool.h>
+#include <stdio.h>
+#include <string.h>
+bool isAlphabet(char x)
+{
+	return ((x >= 'A' && x <= 'Z') || (x >= 'a' && x <= 'z'));
+}
+
+void reverse(char str[])
+{
+	int r = strlen(str) - 1, l = 0;
+
+	while (l < r) {
+		if (!isAlphabet(str[l]))
+			l++;
+		else if (!isAlphabet(str[r]))
+			r--;
+		else {
+			char temp = str[l];
+			str[l] = str[r];
+			str[r] = temp;
+			// swap(str[l], str[r]);
+			l++;
+			r--;
+		}
+	}
+}
+int main()
+{
+	char str[] = "a!!!b.c.d,e'f,ghi";
+	printf("Input string: %s\n", str);
+	reverse(str);
+	printf("Output string: %s\n ", str);
+	return 0;
+}

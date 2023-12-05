@@ -1,0 +1,188 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Java",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ]
+        },
+        {
+            "name": "Java Console App",
+            "type": "java",
+            "request": "launch",
+            "stopOnEntry": true,
+            "jdkPath": "${env:JAVA_HOME}/bin",
+            "cwd": "${fileDirname}",
+            "startupClass": "${fileBasenameNoExtension}",
+            "classpath": [
+                ".",
+                "${fileDirname}"
+            ],
+            "externalConsole": true
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CountDigits",
+            "request": "launch",
+            "mainClass": "CountDigits",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "DigitsOfANumber",
+            "request": "launch",
+            "mainClass": "DigitsOfANumber",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "Fibonacci",
+            "request": "launch",
+            "mainClass": "Fibonacci",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "GCDandLCM",
+            "request": "launch",
+            "mainClass": "GCDandLCM",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "GradingSystem",
+            "request": "launch",
+            "mainClass": "GradingSystem",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "InverseNumber",
+            "request": "launch",
+            "mainClass": "InverseNumber",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "GCDandLCM_37_38",
+            "request": "launch",
+            "mainClass": "Papcoding.GCDandLCM_37_38",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "PrimeNumber",
+            "request": "launch",
+            "mainClass": "PrimeNumber",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "Prime_Factorization",
+            "request": "launch",
+            "mainClass": "Prime_Factorization",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "PrintAllPrime",
+            "request": "launch",
+            "mainClass": "PrintAllPrime",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "Pythagorean_Triplets",
+            "request": "launch",
+            "mainClass": "Pythagorean_Triplets",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "ReverseNumber",
+            "request": "launch",
+            "mainClass": "ReverseNumber",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "RotateANumber",
+            "request": "launch",
+            "mainClass": "RotateANumber",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "TakeInput",
+            "request": "launch",
+            "mainClass": "TakeInput",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "Variables",
+            "request": "launch",
+            "mainClass": "Variables",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "Zshap",
+            "request": "launch",
+            "mainClass": "Zshap",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "first",
+            "request": "launch",
+            "mainClass": "first",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "ifelse2",
+            "request": "launch",
+            "mainClass": "ifelse2",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "ifelsh",
+            "request": "launch",
+            "mainClass": "ifelsh",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "loop",
+            "request": "launch",
+            "mainClass": "loop",
+            "projectName": "DSA in java"
+        },
+        {
+            "type": "java",
+            "name": "sum",
+            "request": "launch",
+            "mainClass": "sum",
+            "projectName": "DSA in java"
+        }
+    ]
+}

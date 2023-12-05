@@ -1,0 +1,7 @@
+Java collection framework, is a fancy way of saying that we have a bunch of cool tools to help us store and organize our data in Java.
+
+Think of it like a toolbox - you have all these different tools to help you with different tasks, like a hammer for pounding nails or a screwdriver for tightening screws. Similarly, the collection framework provides us with different data structures to help us with different tasks.
+
+The Java collection framework has different types of containers like List, Set, and Map. Each container has its own unique properties. For example, if we need to store a bunch of elements and want to access them in a particular order, we can use a List. If we want to store elements in a way that ensures uniqueness, we can use a Set and If we want to store key-value pairs, we can use a Map.
+
+We'll learn more about List, Set, and Map Interface in lessons coming up next.
