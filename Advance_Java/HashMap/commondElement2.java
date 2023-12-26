@@ -30,12 +30,12 @@ public class commondElement2 {
         }
         for (int val : a2) {
             if (map.containsKey(val) && map.get(val) > 0) {
-                System.out.println("val = "+val);
+                System.out.println("val = " + val);
                 // map.remove(val);
                 int of = map.get(val);
                 int nf = of - 1;
-                map.put(val,nf);
+                map.put(val, nf);
             }
         }
     }
-} 
+}
