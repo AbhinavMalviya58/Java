@@ -17,7 +17,7 @@ public class Heaps {
         System.out.print("\nsmall to long = ");
         while(pq2.size() > 0){
             System.out.print(pq2.peek()+" ");  
-            pq2.remove();
+            pq2.remove();           
         }
     }
 }
