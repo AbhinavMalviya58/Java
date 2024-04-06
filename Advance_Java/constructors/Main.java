@@ -52,8 +52,6 @@ class Cuboid {
 
 
                         OUTPUT
-
-
                     E:\programing\java\JAVA_by_saurabh_shukla_sir\constructors>java Main.java
                     10 20 30
                     total surface area = 2200
