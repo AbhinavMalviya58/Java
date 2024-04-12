@@ -10,5 +10,6 @@ public class powerLInear {
     public static void main(String[] args) {
         int n = powerLinear(2, 0);
         System.out.println(n);
+        
     }
 } 
