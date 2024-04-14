@@ -1,10 +1,10 @@
 import java.util.*;
-public class displayAnArray {
-    static void Array(int a[], int index) {
+public class arrayInReverse {
+    static void Reverse(int a[], int index) {
         if(index == a.length)
         return;
+        Reverse(a, index+1);
         System.out.print(a[index]+" ");
-        Array(a, index+1);
     }
 
     public static void main(String[] args) {
@@ -16,6 +16,6 @@ public class displayAnArray {
             a[i] = scn.nextInt();
         }
         scn.close();
-        Array(a,idx);
+        Reverse(a,idx);
     }
 }

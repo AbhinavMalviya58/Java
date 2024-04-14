@@ -1,10 +1,15 @@
 import java.util.*;
-public class displayAnArray {
-    static void Array(int a[], int index) {
-        if(index == a.length)
-        return;
-        System.out.print(a[index]+" ");
-        Array(a, index+1);
+public class maximumOfAnArray {
+    static int max(int[] a, int idx){
+        if(idx == a.length-1){
+            return a[idx];
+        }
+        int num = max(a, idx+1);
+        if(num > a[idx]){
+            return num;
+        }
+        return a[idx];
+
     }
 
     public static void main(String[] args) {
@@ -16,6 +21,7 @@ public class displayAnArray {
             a[i] = scn.nextInt();
         }
         scn.close();
-        Array(a,idx);
+        int num = max(a,idx);
+        System.out.println("Max is "+num);
     }
 }
