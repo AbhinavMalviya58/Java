@@ -1,4 +1,4 @@
-public class N_natural_numbers_reverse_order {
+public class nNaturalNumbersReverseOrder {
     static void reverseOrder(int n){
         if(n<1){
             return;
