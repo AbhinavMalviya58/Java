@@ -5,7 +5,7 @@ public class GetSubsequence {
             ArrayList<String> base = new ArrayList<>();
             base.add("");
             return base;
-        }
+        }   
 
         char ch = str.charAt(0);//a
         String sub = str.substring(1);//bc
@@ -18,7 +18,6 @@ public class GetSubsequence {
         for(String n : fath){
             newArr.add(ch+n);
         }
-        
         return newArr;
     }
     public static void main(String[] args) {
