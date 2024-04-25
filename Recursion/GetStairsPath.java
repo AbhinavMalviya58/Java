@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GetStairsPath {
     static ArrayList <String> stairsPath(int getPath){
@@ -6,7 +7,7 @@ public class GetStairsPath {
             ArrayList <String> base = new ArrayList<>();
             base.add("");
             return base;
-        }else if(getPath>0){
+        }else if(getPath<0){
             ArrayList <String> base = new ArrayList<>();
             return base;
         }
@@ -26,8 +27,11 @@ public class GetStairsPath {
         }
         return paths;
     } 
-    public static void main(String[] args) { 
-        ArrayList <String> Ans = stairsPath(4);
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        scn.close();
+        ArrayList <String> Ans = stairsPath(n);
         System.out.println(Ans);
     }
 }
