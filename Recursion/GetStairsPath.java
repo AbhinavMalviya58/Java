@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GetStairsPath {
-    static ArrayList <String> stairsPath(int getPath){
+    static ArrayList<String> stairsPath(int getPath){
         if(getPath==0){
             ArrayList <String> base = new ArrayList<>();
             base.add("");
@@ -15,6 +15,7 @@ public class GetStairsPath {
         ArrayList <String> path1 = stairsPath(getPath - 1);
         ArrayList <String> path2 = stairsPath(getPath - 2);
         ArrayList <String> path3 = stairsPath(getPath - 3);
+
         ArrayList <String> paths = new ArrayList<>();
         for(String num: path1){
             paths.add(1+num);
