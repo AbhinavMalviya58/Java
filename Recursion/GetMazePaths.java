@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GetMazePaths {
     static ArrayList<String> getMaze (int sh, int sv, int eh, int ev){
@@ -27,7 +28,11 @@ public class GetMazePaths {
         return paths;
     }
     public static void main(String[] args) {
-        ArrayList <String> ans = getMaze(1, 1, 3, 3);
+        Scanner scn = new Scanner(System.in);
+        int h = scn.nextInt();
+        int v = scn.nextInt();
+        scn.close();
+        ArrayList <String> ans = getMaze(1, 1, h, v);
         System.out.println(ans);
     }
 }
