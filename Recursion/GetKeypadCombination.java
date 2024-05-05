@@ -1,6 +1,6 @@
 import java.util.*;
 public class GetKeypadCombination {
-    static String[] code = {",;","abc" ,"def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
+    static String[] code = {",;","abc" ,"def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     static ArrayList<String> getKeypad(String key){
         if(key.length()==0){
             ArrayList <String> base = new ArrayList<>();
@@ -23,7 +23,7 @@ public class GetKeypadCombination {
         return newArr;
     }
     public static void main(String[] args) {
-        ArrayList <String> ans = getKeypad("0123456789");
+        ArrayList <String> ans = getKeypad("45");
         System.out.println(ans);
     }
 }
