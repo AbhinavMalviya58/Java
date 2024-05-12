@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class printKeypadCombination {
     static String[] code = {" ",",;","abc" ,"def","ghi","jkl","mno","pqrs","tuv","wxyz"};
     static void printKeypad(String ques, String Ans){
@@ -17,7 +19,10 @@ public class printKeypadCombination {
         }
     }
     public static void main(String[] args) {
-        String k = "23";
+        Scanner scr = new Scanner(System.in);
+        String k = scr.next();
+        scr.close();
+
         printKeypad(k, "");
     }
 }
