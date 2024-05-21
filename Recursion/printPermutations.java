@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class printPermutations {
     public static void main(String [] args){
-        // Scanner scr = new Scanner(System.in);
-        // String str = scr.next();
-        // scr.close();
-        Permutations("abc", "");
+        Scanner scr = new Scanner(System.in);
+        String str = scr.next();
+        scr.close();
+        Permutations(str, "");
     }
 
     public static void Permutations(String ques, String asf){
