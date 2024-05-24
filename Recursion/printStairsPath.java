@@ -5,7 +5,7 @@ public class printStairsPath {
             return;
         }
         if(stair == 0){
-            System.out.print(path+" ");
+            System.out.println(path+" ");
             return;
         }
 
@@ -14,6 +14,6 @@ public class printStairsPath {
         printStairs(stair - 3, path + "3");
     }
     public static void main(String[] args) {
-        printStairs(4," ");
+        printStairs(10 ," ");
     }
 }
