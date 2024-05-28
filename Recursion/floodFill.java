@@ -28,6 +28,9 @@ public class floodFill {
             System.out.println(ans);
             return;
         }
+
+        arrayLiat
+
         visited[row][col] = true;
         flood(arr, row - 1, col, ans + "t", visited);
         flood(arr, row, col - 1, ans + "l", visited);
@@ -39,10 +42,10 @@ public class floodFill {
     public static int shortPathFlood(int[][] arr , int row, int col, int x, int y, boolean[][] visited){
         if (row < 0 || col < 0 || row == arr.length || col == arr[0].length ||
         arr[row][col] == 1 || visited[row][col] == true) {
-            return;
+            return 0;
         }
         if(row == arr.length && col == arr[0].length){
-            return;
+            return 0;
         }
         visited[row][col] = true;
         int top = shortPathFlood(arr, row - 1, col, x, y, visited) + 1;
