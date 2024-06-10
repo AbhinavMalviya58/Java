@@ -8,15 +8,15 @@ public class fibonacciDP {
         System.out.println(k);
     }
 
-    // public static int Fib(int num) {
-    //     if (num == 0 || num == 1) {
-    //         return num;
-    //     } 
-    //     int fibNum1 = Fib(num - 1);
-    //     int fibNum2 = Fib(num - 2);
-    //     int fibNum = fibNum1 + fibNum2;
-    //     return fibNum;
-    // }
+    public static int Fib(int num) {
+        if (num == 0 || num == 1) {
+            return num;
+        }
+        int fibNum1 = Fib(num - 1);
+        int fibNum2 = Fib(num - 2);
+        int fibNum = fibNum1 + fibNum2;
+        return fibNum;
+    }
 
     public static int FibMemoization(int num, int[] qb) {
         if (num == 0 || num == 1) {
