@@ -4,6 +4,7 @@ public class climbingStairsDP {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int num = scn.nextInt();
+        scn.close();
         int Tabulation = stairsTabulation(num);
         // int stair = stairs(num);
         System.out.println(Tabulation);

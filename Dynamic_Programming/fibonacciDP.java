@@ -4,6 +4,7 @@ public class fibonacciDP {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int n = scn.nextInt();
+        scn.close();
         int k = FibMemoization(n,new int[n + 1]);
         System.out.println(k);
     }

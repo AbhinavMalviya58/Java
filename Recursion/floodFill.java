@@ -15,7 +15,7 @@ public class floodFill {
         }
         boolean[][] visited = new boolean[R][C];
         flood(arr, 0, 0, "", visited);
-        int path = shortPathFlood(arr, 0, 0, 4, 4, visited);
+        int path = flood(arr, 0, 0, 4, 4, visited);
         System.out.println(path);
     }
 
@@ -39,20 +39,22 @@ public class floodFill {
         visited[row][col] = false;
     }
 
-    public static int shortPathFlood(int[][] arr , int row, int col, int x, int y, boolean[][] visited){
-        if (row < 0 || col < 0 || row == arr.length || col == arr[0].length ||
-        arr[row][col] == 1 || visited[row][col] == true) {
-            return 0;
-        }
-        if(row == arr.length && col == arr[0].length){
-            return 0;
-        }
-        visited[row][col] = true;
-        int top = shortPathFlood(arr, row - 1, col, x, y, visited) + 1;
-        int left = shortPathFlood(arr, row, col - 1, x, y, visited) + 1;
-        int doun = shortPathFlood(arr, row + 1, col, x, y, visited) + 1;
-        int right = shortPathFlood(arr, row, col + 1, x, y, visited) + 1;
-        visited[row][col] = false;
-        return Math.min(Math.min(top, left), Math.min(doun, right));
-    }
+    // public static int shortPathFlood(int[][] arr, int row, int col, int x, int y, boolean[][] visited) {
+
+    //     if (row < 0 || col < 0 || row == arr.length || col == arr[0].length ||
+    //             arr[row][col] == 1 || visited[row][col] == true) {
+    //         return 0;
+    //     }
+    //     if (row == arr.length && col == arr[0].length) {
+    //         return 0;
+    //     }
+    //     visited[row][col] = true;
+    //     int top = shortPathFlood(arr, row - 1, col, x, y, visited) + 1;
+    //     int left = shortPathFlood(arr, row, col - 1, x, y, visited) + 1;
+    //     int doun = shortPathFlood(arr, row + 1, col, x, y, visited) + 1;
+    //     int right = shortPathFlood(arr, row, col + 1, x, y, visited) + 1;
+    //     visited[row][col] = false;
+    //     return Math.min(Math.min(top, left), Math.min(doun, right));
+    // }
+
 }
