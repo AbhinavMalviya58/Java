@@ -26,7 +26,7 @@ public class guessTheNumber {
             }
         }
         
-        System.out.println("Congratulations!🎉🎊 You guessed the number " + numberToGuess + " in " + numberOfTries + " tries. ");
+        System.out.println("Congratulations You guessed the number " + numberToGuess + " in " + numberOfTries + " tries. ");
         scanner.close();
     }
 
