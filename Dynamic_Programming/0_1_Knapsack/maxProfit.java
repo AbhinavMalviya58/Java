@@ -1,8 +1,6 @@
 /**
  * maxProfit Knapsack Recursive
  */
-import java.util.*;
-import java.math.*;
 public class maxProfit {
     public static void main(String[] args) {
         // profit()
