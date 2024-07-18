@@ -6,6 +6,15 @@ import java.math.*;
 public class maxProfit {
     public static void main(String[] args) {
         // profit()
+
+        int[] value = {60, 100, 120}; // Values of the items
+        int[] wate = {10, 20, 30};   // Weights of the items
+        int w = 50;                  // Capacity of the knapsack
+        int n = value.length;        // Number of items
+
+        maxProfit knapsack = new maxProfit();
+        int maxProfit = knapsack.profit(value, wate, w, n);
+        System.out.println("Maximum profit: " + maxProfit);
     }
 
     int profit(int value[], int wate[], int w, int n){
