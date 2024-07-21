@@ -14,12 +14,18 @@ public class maxProfit {
         int maxProfit = knapsack.profit(value, wate, w, n);
         System.out.println("Maximum profit: " + maxProfit);
     }
-
+    
     int profit(int value[], int wate[], int w, int n){
         /*
             item1 = w1 
             w1 <= w ,  include in bag // or // not include in bag
             w1 > w      not include in bag
+
+            Initializes the value and wate arrays representing the values and weights of the items.
+            Sets the capacity of the knapsack (w).
+            Determines the number of items (n).
+            Creates an instance of the Knapsack class.
+            Calls the profit method with the specified arguments and prints the result.
          */
         
         // base condition
