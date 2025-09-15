@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Java Practice — Questions & Answers</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa6b2;--accent:#7dd3fc}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; margin:0; background:linear-gradient(180deg,#071025 0%, #07112a 100%); color:#e6f0f6}
+    header{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;gap:16px;align-items:center}
+    h1{margin:0;font-size:20px}
+    .container{display:grid;grid-template-columns:320px 1fr;gap:18px;padding:18px}
+    .sidebar{background:var(--card);border-radius:12px;padding:14px;min-height:70vh}
+    .search{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:#071320;color:var(--muted)}
+    .nav{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+    .nav button{background:transparent;color:var(--muted);border:none;padding:8px;text-align:left;border-radius:8px;cursor:pointer}
+    .nav button.active{background:rgba(125,211,252,0.08);color:var(--accent)}
+    .main{border-radius:12px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));min-height:70vh;overflow:auto}
+    .section{margin-bottom:18px}
+    .q-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+    .q{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;font-size:14px}
+    .topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 10px;border-radius:8px;color:var(--muted);cursor:pointer}
+    .btn.primary{background:var(--accent);color:#052033;border:none}
+    .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    pre{background:#06121a;padding:10px;border-radius:8px;overflow:auto;color:#bfefff}
+    footer{padding:14px;text-align:center;color:var(--muted);font-size:13px}
+    .small{font-size:13px;color:var(--muted)}
+    textarea.answer, textarea.code{width:100%;min-height:72px;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:#06121a;color:#e6f0f6;box-sizing:border-box;}
+    textarea.code{min-height:160px;background:#00101a;color:#bfefff;font-family:monospace}
+    .q-header{display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;} /* Added margin-bottom */
+    .q-number{color:var(--accent);font-weight:600}
+    .actions{display:flex;gap:8px;margin-top:8px}
+    .small-btn{padding:6px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);cursor:pointer}
+    .answer-label { font-size: 13px; color: var(--muted); margin-bottom: 4px; display: block; } /* New style for labels */
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Java Interview Practice — Q&A</h1>
+      <div class="small">Type answers and code below each question. Data is saved in your browser (localStorage). You can export all answers as JSON.</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <input id="search" class="search" placeholder="Search question text or project" />
+      <div class="nav">
+        <button id="btn-theory" class="active">Theory Questions (60)</button>
+        <button id="btn-coding">Coding Questions (90)</button>
+        <button id="btn-export">Export Answers</button>
+        <button id="btn-clear">Clear Saved Answers</button>
+        <button id="btn-download">Download HTML</button>
+      </div>
+      <div style="margin-top:14px;color:var(--muted);font-size:13px">Tip: Use the copy button to copy a question. Use Export to download all your answers as JSON.</div>
+    </aside>
+
+    <main class="main">
+      <div id="content"></div>
+    </main>
+  </div>
+
+  <footer>Made for quick interview practice — answers saved locally. Use Export to back up your work.</footer>
+
+  <script>
+    // Data arrays
+    const theoryQuestions = [
+"What are the main features of Java?",
+"Difference between JDK, JRE, and JVM?",
+"Explain == vs .equals().",
+"What are wrapper classes in Java?",
+"Difference between String, StringBuilder, and StringBuffer.",
+"Why is Java platform-independent?",
+"What is bytecode in Java?",
+"Explain access modifiers in Java.",
+"Difference between static and non-static members.",
+"What is the difference between constructor and method?",
+"What are the four pillars of OOP?",
+"Difference between method overloading and overriding.",
+"Can a constructor be overridden?",
+"Difference between abstract class and interface.",
+"Can an interface extend multiple interfaces?",
+"What is encapsulation in Java?",
+"Can you explain runtime vs compile-time polymorphism?",
+"Difference between super and this keywords.",
+"Can a class be both abstract and final? Why/Why not?",
+"What is the use of the instanceof operator?",
+"Difference between Array and ArrayList.",
+"Difference between ArrayList and LinkedList.",
+"Difference between HashMap and Hashtable.",
+"Difference between Set and List.",
+"What is the difference between TreeSet and HashSet?",
+"What is the difference between Iterator and ListIterator?",
+"Can we store duplicate keys in HashMap?",
+"Difference between fail-fast and fail-safe iterators.",
+"What is the difference between Comparable and Comparator?",
+"What is the initial capacity of ArrayList and HashMap?",
+"Difference between checked and unchecked exceptions.",
+"Difference between throw and throws.",
+"What is the difference between final, finally, and finalize()?",
+"Can we have multiple catch blocks in Java?",
+"What happens if an exception is not caught in Java?",
+"Can finally block execute without catch?",
+"Difference between Error and Exception.",
+"Can we throw multiple exceptions in Java?",
+"What is try-with-resources?",
+"Can we write try block without catch block?",
+"How to create a thread in Java?",
+"Difference between Runnable and Thread class.",
+"What is synchronization in Java?",
+"Difference between process and thread.",
+"What is a daemon thread?",
+"Difference between wait(), sleep(), and join().",
+"What is a deadlock in Java?",
+"What is the difference between notify() and notifyAll()?",
+"What is thread priority in Java?",
+"Can we start a thread twice in Java?",
+"What is garbage collection in Java?",
+"Explain the difference between HashMap and ConcurrentHashMap.",
+"What are lambda expressions in Java?",
+"What is the Stream API in Java 8?",
+"Difference between Optional and null in Java.",
+"Explain JDBC and steps to connect to a database.",
+"What is the difference between ArrayBlockingQueue and PriorityQueue?",
+"What is immutability in Java?",
+"Difference between shallow copy and deep copy.",
+"Explain the concept of memory leaks in Java."
+];
+
+    const codingQuestions = [
+"Reverse a string without using built-in methods.",
+"Check if a string is a palindrome.",
+"Find the first non-repeated character in a string.",
+"Count the occurrences of each character in a string.",
+"Check if two strings are anagrams.",
+"Remove all duplicate characters from a string.",
+"Find the longest substring without repeating characters.",
+"Convert a string to integer (atoi implementation).",
+"Check if a string contains only digits.",
+"Find all permutations of a string.",
+"Find the largest and smallest element in an array.",
+"Reverse an array in place.",
+"Find duplicates in an array.",
+"Remove duplicates from a sorted array.",
+"Find the missing number in an array of 1 to n.",
+"Find the first repeating element in an array.",
+"Rotate an array by k positions.",
+"Find the majority element (appears more than n/2 times).",
+"Find the second largest element in an array.",
+"Merge two sorted arrays into one sorted array.",
+"Check if a number is prime.",
+"Generate Fibonacci series up to n terms.",
+"Find factorial of a number using recursion.",
+"Check if a number is Armstrong number.",
+"Check if a number is perfect number.",
+"Find GCD and LCM of two numbers.",
+"Reverse digits of a number.",
+"Check if a number is palindrome.",
+"Find the sum of digits of a number.",
+"Count number of set bits in an integer.",
+"Implement binary search.",
+"Implement linear search.",
+"Implement bubble sort.",
+"Implement selection sort.",
+"Implement insertion sort.",
+"Implement quicksort.",
+"Implement mergesort.",
+"Find kth smallest element in an array.",
+"Search an element in a rotated sorted array.",
+"Find peak element in an array.",
+"Find frequency of words in a sentence.",
+"Find intersection of two arrays.",
+"Find union of two arrays.",
+"Check if two arrays are equal.",
+"Sort elements by frequency.",
+"Find pairs in array whose sum is equal to a given number.",
+"Find the longest consecutive sequence in an array.",
+"Find subarray with given sum.",
+"Find maximum sum subarray (Kadane’s algorithm).",
+"Two Sum problem using HashMap.",
+"Reverse a linked list.",
+"Detect a cycle in a linked list.",
+"Find the middle element of a linked list.",
+"Merge two sorted linked lists.",
+"Remove duplicates from a linked list.",
+"Find nth node from the end of a linked list.",
+"Check if a linked list is palindrome.",
+"Find the intersection point of two linked lists.",
+"Remove loop in a linked list.",
+"Sort a linked list.",
+"Implement stack using array.",
+"Implement stack using linked list.",
+"Implement queue using array.",
+"Implement queue using linked list.",
+"Implement circular queue.",
+"Implement two stacks in one array.",
+"Implement a queue using two stacks.",
+"Implement a stack using two queues.",
+"Check for balanced parentheses in an expression.",
+"Evaluate postfix expression.",
+"Solve Tower of Hanoi.",
+"Find all subsets of a set.",
+"Find all permutations of an array.",
+"Solve N-Queens problem.",
+"Solve Rat in a Maze problem.",
+"Word search in a matrix (DFS + backtracking).",
+"Count paths in a matrix from top-left to bottom-right.",
+"Generate all balanced parentheses for n pairs.",
+"Subset sum problem.",
+"Sudoku solver.",
+"Implement LRU Cache.",
+"Implement a binary tree and its traversals (inorder, preorder, postorder).",
+"Find height of a binary tree.",
+"Check if a binary tree is balanced.",
+"Find lowest common ancestor in a binary tree.",
+"Serialize and deserialize a binary tree.",
+"Implement BFS and DFS for a graph.",
+"Detect cycle in a graph.",
+"Dijkstra’s algorithm implementation.",
+"Topological sort of a DAG."
+];
+
+    // Utility keys
+    const STORAGE_KEY = 'java_practice_answers_v1';
+
+    // Load saved answers
+    function loadAnswers(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {theory:{}, coding:{}};
+      }catch(e){ return {theory:{}, coding:{}}; }
+    }
+
+    function saveAnswers(obj){ localStorage.setItem(STORAGE_KEY, JSON.stringify(obj)); }
+
+    // Render functions
+    const content = document.getElementById('content');
+    const btnTheory = document.getElementById('btn-theory');
+    const btnCoding = document.getElementById('btn-coding');
+    const btnExport = document.getElementById('btn-export');
+    const btnClear = document.getElementById('btn-clear');
+    const btnDownload = document.getElementById('btn-download');
+    const searchInput = document.getElementById('search');
+
+    let saved = loadAnswers();
+
+    function renderTheory(filter=''){
+      content.innerHTML='';
+      const sec = document.createElement('div'); sec.className='section';
+      const top = document.createElement('div'); top.className='topbar';
+      top.innerHTML = `<h2 style="margin:0">Theory Questions (${theoryQuestions.length})</h2><div style="margin-left:auto" class="small">Answers saved locally</div>`;
+      sec.appendChild(top);
+
+      const grid = document.createElement('div'); grid.className='q-list';
+      theoryQuestions.forEach((q,i)=>{
+        if (filter && !q.toLowerCase().includes(filter.toLowerCase())) return;
+        const d = document.createElement('div'); d.className='q';
+        d.innerHTML = `
+          <div class='q-header'>
+            <div class='q-number'>${i+1}.</div>
+            <div style='flex:1'><strong style='display:block'>${q}</strong></div>
+          </div>
+          <label for="theory-answer-${i}" class="answer-label">Your Answer:</label>
+        `;
+        const ta = document.createElement('textarea');
+        ta.id = `theory-answer-${i}`; // Added ID for label
+        ta.className='answer'; ta.placeholder='Write your answer here...'; ta.value = (saved.theory && saved.theory[i]) ? saved.theory[i] : '';
+        ta.addEventListener('input', ()=>{ saved.theory[i]=ta.value; saveAnswers(saved); });
+        const actions = document.createElement('div'); actions.className='actions';
+        const copyBtn = document.createElement('button'); copyBtn.className='small-btn'; copyBtn.textContent='Copy Question'; copyBtn.addEventListener('click', ()=>{navigator.clipboard.writeText(`${i+1}. ${q}`); alert('Copied question to clipboard');});
+        actions.appendChild(copyBtn);
+        d.appendChild(ta);
+        d.appendChild(actions);
+        grid.appendChild(d);
+      });
+      sec.appendChild(grid);
+      content.appendChild(sec);
+    }
+
+    function renderCoding(filter=''){
+      content.innerHTML='';
+      const sec = document.createElement('div'); sec.className='section';
+      const top = document.createElement('div'); top.className='topbar';
+      top.innerHTML = `<h2 style="margin:0">Coding Questions (${codingQuestions.length})</h2><div style="margin-left:auto" class="small">Write code below each question (saved locally)</div>`;
+      sec.appendChild(top);
+
+      const grid = document.createElement('div'); grid.className='q-list';
+      codingQuestions.forEach((q,i)=>{
+        if (filter && !q.toLowerCase().includes(filter.toLowerCase())) return;
+        const d = document.createElement('div'); d.className='q';
+        d.innerHTML = `
+          <div class='q-header'>
+            <div class='q-number'>${i+1}.</div>
+            <div style='flex:1'><strong style='display:block'>${q}</strong></div>
+          </div>
+          <label for="coding-code-${i}" class="answer-label">Your Code:</label>
+        `;
+        const ta = document.createElement('textarea');
+        ta.id = `coding-code-${i}`; // Added ID for label
+        ta.className='code'; ta.placeholder='Write your Java code here...'; ta.value = (saved.coding && saved.coding[i]) ? saved.coding[i] : '';
+        ta.addEventListener('input', ()=>{ saved.coding[i]=ta.value; saveAnswers(saved); });
+        const actions = document.createElement('div'); actions.className='actions';
+        const copyBtn = document.createElement('button'); copyBtn.className='small-btn'; copyBtn.textContent='Copy Question'; copyBtn.addEventListener('click', ()=>{navigator.clipboard.writeText(`${i+1}. ${q}`); alert('Copied question to clipboard');});
+        const downloadBtn = document.createElement('button'); downloadBtn.className='small-btn'; downloadBtn.textContent='Download .java';
+        downloadBtn.addEventListener('click', ()=>{ const filename = `Q${i+1}_${q.replace(/[^a-z0-9]/gi,'_').slice(0,40)}.java`; downloadTextFile(ta.value || `// Solution for: ${q}\n`, filename); });
+        actions.appendChild(copyBtn); actions.appendChild(downloadBtn);
+        d.appendChild(ta);
+        d.appendChild(actions);
+        grid.appendChild(d);
+      });
+      sec.appendChild(grid);
+      content.appendChild(sec);
+    }
+
+    function downloadTextFile(text, filename){
+      const blob = new Blob([text], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    }
+
+    // Initial render
+    renderTheory();
+
+    // Nav events
+    btnTheory.addEventListener('click', ()=>{ setActive(btnTheory); renderTheory(searchInput.value.trim()); });
+    btnCoding.addEventListener('click', ()=>{ setActive(btnCoding); renderCoding(searchInput.value.trim()); });
+    btnExport.addEventListener('click', ()=>{ const data = loadAnswers(); downloadTextFile(JSON.stringify(data, null, 2), 'java_practice_answers.json'); });
+    btnClear.addEventListener('click', ()=>{ if(confirm('Clear all saved answers from this browser? This action cannot be undone.')){ localStorage.removeItem(STORAGE_KEY); saved = {theory:{}, coding:{}}; renderTheory(searchInput.value.trim()); } });
+    btnDownload.addEventListener('click', ()=>{ downloadTextFile(document.documentElement.outerHTML, 'Java_Practice_Questions_and_Answers.html'); });
+
+    function setActive(btn){ document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+
+    // Search
+    searchInput.addEventListener('input', ()=>{
+      const f = searchInput.value.trim();
+      if (document.getElementById('btn-theory').classList.contains('active')) renderTheory(f);
+      else renderCoding(f);
+    });
+
+    // Auto-save interval
+    setInterval(()=>{ saveAnswers(saved); }, 5000); // Saves answers every 5 seconds
+  </script>
+</body>
+</html>
